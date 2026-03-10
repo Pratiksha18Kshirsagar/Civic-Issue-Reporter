@@ -3,7 +3,9 @@ const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
 
 const createUser = async (req, res) => {
+    console.log("I am signup")
     try {
+        console.log("I came here hello!!")
         const { name, email, password, phone } = req.body;
 
         if (!name || !email || !password || !phone) {
