@@ -135,7 +135,7 @@ const getAllOpenIssues = async (req, res) => {
     try {
         const issues = await Issue.find({ status: 'Open' })
             .populate('reporter', 'name email phone resolvedCount')
-            .sort({ createdAt: -1 });
+            .sort({ upvotes: -1, createdAt: -1 });
 
         res.status(200).json(issues);
     } catch (error) {
